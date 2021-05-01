@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header><p>TO DO LIST</p></header>
+    <main>
+      <form action="addtask">
+        <div class="add-task">
+          <input type="text" name="task" id="task" placeholder="Add Task" />
+          <input type="submit" id="add" value="+" />
+        </div>
+      </form>
+      <div class="list-task">
+        <p>TASKS</p>
+        {% for item in task %}
+        <div class="task-container">
+          <form class="delete-task" action="delete/{{item.pk}}">
+            <div class="task">{{ item.task }}</div>
+            <input type="submit" id="button" value="-" />
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+  </body>
+</html>

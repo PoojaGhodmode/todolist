@@ -1,0 +1,128 @@
+:root{
+    --blue : #0a2463;
+    --skyblue : #3E92CC;
+    --white : #fffaff;
+    --cherry: #D8315B;
+    --black: #1e1b18;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background:linear-gradient(90deg, rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.514)), var(--skyblue) ;
+    font-family: monospace;
+}
+header{
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.514),rgba(0, 0, 0, 0.394)), var(--blue) ;
+    padding: 2rem;
+}
+header p{
+    font-size: 3.6rem;
+    margin-left: 3rem;
+    font-weight: bolder;
+    color: var(--white);
+}
+
+main{
+    margin:8rem 0 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.add-task{
+    width: 90%;
+    display: flex;
+    gap:0.5rem;
+}
+
+.add-task #task{
+    padding: 1rem;
+    width: 85%;
+    border-radius: 1rem;
+    border: 0.2rem solid var(--black);
+    outline: none;
+}
+.add-task #task::placeholder{
+    font-size: 1.5rem;
+}
+
+
+.add-task #add{
+    min-width: 8rem;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.514),rgba(0, 0, 0, 0.394)), var(--blue);
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.add-task #add:hover,
+.add-task #add:focus{
+    background: var(--white);
+    color: var(--blue);
+}   
+
+.list-task{
+    width:90%;
+    
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+.list-task>p{
+    font-size: 3rem;
+    color: var(--white);
+    font-weight:900;
+    
+}
+.task-container{
+    width: 80%;
+}
+.task{
+    font-size: 2rem;
+    padding: 0.7rem;
+    width: 85%;
+    color: var(--white);
+}
+.task::before{
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.514),rgba(0, 0, 0, 0.394)), var(--blue);
+
+}
+
+#button{
+    min-width: 8rem;
+    background: var(--cherry);
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: var(--white);
+    padding: 0.5rem;
+
+}
+
+#button:hover,
+#button:focus{
+    background:var(--white);
+    color: var(--cherry);
+}
+
+.delete-task{
+    display: flex;
+    flex-direction: row;
+}
