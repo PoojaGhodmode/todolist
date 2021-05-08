@@ -22,7 +22,8 @@
         {% for item in task %}
         <div class="task-container">
           <form class="delete-task" action="delete/{{item.pk}}">
-            <div class="task">{{ item.task }}</div>
+            <div class="task"><input type="checkbox" name="" id={{item.pk}}>
+            <label for={{item.pk}}>{{ item.task }}</label></div>
             <input type="submit" id="button" value="-" />
           </form>
         </div>
@@ -30,4 +31,17 @@
       </div>
     </main>
   </body>
+  <script>
+    const task = document.querySelector(".task span");
+
+    task.addEventListener("click", () => {
+      console.log("hello")
+      console.log(task.style.textDecorationLine)
+      if (task.style.textDecorationLine == "line-through") {
+        task.style.textDecorationLine = "none";
+      } else if (task.style.textDecorationLine == null) {
+        task.style.textDecorationLine = line-through;
+      }
+    });
+  </script>
 </html>
